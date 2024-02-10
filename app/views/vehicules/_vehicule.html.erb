@@ -1,0 +1,22 @@
+<div id="<%= dom_id vehicule %>">
+  <p>
+    <strong>Marque:</strong>
+    <%= vehicule.marque %>
+  </p>
+
+  <p>
+    <strong>Modele:</strong>
+    <%= vehicule.modele %>
+  </p>
+
+  <p>
+    <strong>Photo:</strong>
+    <%= image_tag(vehicule.photo, width:'50%' ) if vehicule.photo.attached? %>
+  </p>
+
+  <p>
+    <strong>Price:</strong>
+    <%= vehicule.price %>
+  </p>
+
+</div>
