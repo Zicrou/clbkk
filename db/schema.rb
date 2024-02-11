@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_02_10_111043) do
+ActiveRecord::Schema[7.0].define(version: 2024_02_11_195549) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -42,6 +42,25 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_10_111043) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "immobiliers", force: :cascade do |t|
+    t.string "titre"
+    t.integer "chambre"
+    t.integer "salle_de_bain"
+    t.integer "douche_exterieur"
+    t.text "description"
+    t.string "prix"
+    t.string "adresse"
+    t.string "region"
+    t.integer "etage"
+    t.string "rez_de_chausse"
+    t.string "terasse"
+    t.string "contact"
+    t.integer "statut"
+    t.integer "etat"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "vehicules", force: :cascade do |t|
     t.string "marque"
     t.string "modele"
@@ -49,6 +68,20 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_10_111043) do
     t.decimal "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "annee_modele"
+    t.string "date_de_premiere_mise_en_circulation"
+    t.string "kilometrage"
+    t.integer "diesel"
+    t.integer "gazoil"
+    t.integer "hybride"
+    t.integer "manuelle"
+    t.integer "automatique"
+    t.integer "sequentielles"
+    t.string "type_de_vehicule"
+    t.integer "nombre_de_porte"
+    t.integer "nombre_de_place"
+    t.string "puissance_fiscale"
+    t.string "puissance_din"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"

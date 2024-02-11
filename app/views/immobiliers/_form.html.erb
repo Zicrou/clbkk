@@ -1,0 +1,82 @@
+<%= form_with(model: immobilier) do |form| %>
+  <% if immobilier.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(immobilier.errors.count, "error") %> prohibited this immobilier from being saved:</h2>
+
+      <ul>
+        <% immobilier.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :titre, style: "display: block" %>
+    <%= form.text_field :titre %>
+  </div>
+
+  <div>
+    <%= form.label :chambre, style: "display: block" %>
+    <%= form.number_field :chambre %>
+  </div>
+
+  <div>
+    <%= form.label :salle_de_bains, style: "display: block" %>
+    <%= form.number_field :salle_de_bains %>
+  </div>
+
+  <div>
+    <%= form.label :description, style: "display: block" %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div>
+    <%= form.label :prix, style: "display: block" %>
+    <%= form.text_field :prix %>
+  </div>
+
+  <div>
+    <%= form.label :adresse, style: "display: block" %>
+    <%= form.text_field :adresse %>
+  </div>
+
+  <div>
+    <%= form.label :region, style: "display: block" %>
+    <%= form.text_field :region %>
+  </div>
+
+  <div>
+    <%= form.label :etage, style: "display: block" %>
+    <%= form.number_field :etage %>
+  </div>
+
+  <div>
+    <%= form.label :rez_de_chausse, style: "display: block" %>
+    <%= form.text_field :rez_de_chausse %>
+  </div>
+
+  <div>
+    <%= form.label :terasse, style: "display: block" %>
+    <%= form.text_field :terasse %>
+  </div>
+
+  <div>
+    <%= form.label :contact, style: "display: block" %>
+    <%= form.text_field :contact %>
+  </div>
+
+  <div>
+    <%= form.label :statut, style: "display: block" %>
+    <%= form.number_field :statut %>
+  </div>
+
+  <div>
+    <%= form.label :etat, style: "display: block" %>
+    <%= form.number_field :etat %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

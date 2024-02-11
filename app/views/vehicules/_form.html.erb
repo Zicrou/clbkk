@@ -11,27 +11,141 @@
     </div>
   <% end %>
 
-  <div class="form-group col-md-4 mb-4">
-    <%= form.label :marque, style: "display: block" %>
-    <%= form.text_field :marque, class:"form-control" %>
+  <div class="row mt-4">
+    <div class="col-md-6" style="padding-left:25px">
+      <div class="container">
+
+        <div class="form-group col-md-6 mb-4 mx-5">
+          <%= form.label :marque, style: "display: block" %>
+          <%= form.text_field :marque, class:"form-control" %>
+        </div>
+
+        <div class="form-group col-md-6 mb-4 mx-5">
+          <%= form.label :modele, style: "display: block" %>
+          <%= form.text_field :modele, class:"form-control" %>
+        </div>
+
+        <div class="form-group col-md-6 mb-4 mx-5">
+          <%= form.label :annee_modele, style: "display: block" %>
+          <%= form.text_field :annee_modele, class:"form-control" %>
+        </div>
+
+        <div class="form-group col-md-6 mb-4 mx-5">
+          <%= form.label :date_de_premiere_mise_en_circulation, style: "display: block" %>
+          <%= form.text_field :date_de_premiere_mise_en_circulation, class:"form-control" %>
+        </div>
+
+        <div class="form-group col-md-6 mb-4 mx-5">
+          <%= form.label :kilometrage, style: "display: block" %>
+          <%= form.text_field :kilometrage, class:"form-control" %>
+        </div>
+
+        <div class="row d-flex flex-row col-md-6 mb-4 px-4">
+          
+          <div class="form-check col-md-2 mx-3">
+            <%= form.label :diesel, style: "display: block" %>
+            <%= form.check_box :diesel, :as => :boolean, input_html: {checked: false}, class:"form-check-input mx-2" %>
+          </div>
+
+          <div class="form-check col-md-2 mx-3">
+            <%= form.label :gazoil, style: "display: block" %>
+            <%= form.check_box :gazoil, :as => :boolean, input_html: {checked: false}, class:"form-check-input mx-2" %>          
+          </div>
+
+          <div class="form-check col-md-2 mx-3">
+            <%= form.label :hybride, style: "display: block" %>
+            <%= form.check_box :hybride, :as => :boolean, input_html: {checked: false}, class:"form-check-input mx-2" %>
+          </div>
+          
+        </div>
+
+        
+
+        
+        
+      </div>
+    </div> 
+
+    <div class="col-md-6" style="padding-left:35px"> 
+      
+      <div class="row d-flex flex-column col-md-6 mb-4">
+
+        <div class="column mb-4 mx-5 p-1" style="border:1px solid grey;">
+          <h5 class="mx-5">Boite de vitesse</h5>
+            <div class="form-check col-md-2 mx-1">
+            <%= form.label :automatique, style: "display: block" %>
+            <%= form.check_box :automatique, :as => :boolean, input_html: {checked: false}, class:"form-check-input mx-2" %>
+          </div>
+
+          <div class="form-check col-md-2 mx-4">
+            <%= form.label :manuelle, style: "display: block" %>
+            <%= form.check_box :manuelle, :as => :boolean, input_html: {checked: false}, class:"form-check-input mx-2" %>
+          </div>
+
+          <div class="form-check col-md-2 mx-5">
+            <%= form.label :sequentielle, style: "display: block" %>
+            <%= form.check_box :sequentielle, :as => :boolean, input_html: {checked: false}, class:"form-check-input mx-2" %>
+          </div>
+        </div>
+      </div>
+       
+
+      <div class="form-group col-md-6 mb-4 mx-5">
+        <%= form.label :type_de_vehicule, style: "display: block" %>
+        <%= form.text_field :type_de_vehicule, class:"form-control" %>
+      </div>
+
+      <div class="form-group col-md-6 mb-4 mx-5">
+        <%= form.label :nombre_de_porte, style: "display: block" %>
+        <%= form.text_field :nombre_de_porte, class:"form-control" %>
+      </div>
+
+      <div class="form-group col-md-6 mb-4 mx-5">
+        <%= form.label :nombre_de_place, style: "display: block" %>
+        <%= form.text_field :nombre_de_place, class:"form-control" %>
+      </div>
+
+      <div class="form-group col-md-6 mb-4 mx-5">
+        <%= form.label :puissance_fiscale, style: "display: block" %>
+        <%= form.text_field :puissance_fiscale, class:"form-control" %>
+      </div>
+
+      <div class="form-group col-md-6 mb-4 mx-5">
+        <%= form.label :puissance_din, style: "display: block" %>
+        <%= form.text_field :puissance_din, class:"form-control" %>
+      </div>
+
+      <div class="form-group col-md-6 mb-4 mx-5">
+        <%= form.label :price, style: "display: block" %>
+        <%= form.text_field :price, precision: 10, scale: 2, class:"form-control"  %>
+      </div>
+
+    </div> 
   </div>
 
-  <div class="form-group col-md-4 mb-4">
-    <%= form.label :modele, style: "display: block" %>
-    <%= form.text_field :modele, class:"form-control" %>
-  </div>
-
-  <div class="form-group col-md-4 mb-4">
+  <div class="form-group col-md-6 mb-4 mx-5">
     <%= form.label :photo, style: "display: block" %>
     <%= form.file_field :photo %>
   </div>
 
-  <div class="form-group col-md-4 mb-4">
-    <%= form.label :price, style: "display: block" %>
-    <%= form.text_field :price, precision: 10, scale: 2, class:"form-control"  %>
-  </div>
+  
 
-  <div class="form-group col-md-4 mb-4">
+  <div class="form-group col-md-6 mb-4 mx-5">
     <%= form.submit "Valider", class:"btn btn-primary" %>
   </div>
 <% end %>
+
+<!-- 
+    t.string "annee_modele"
+    t.string "date_de_premiere_mise_en_circulation"
+    t.string "kilometrage"
+    t.boolean "diesel"
+    t.boolean "gazoil"
+    t.boolean "hybride"
+    t.string "boite_de_vitesse"
+    t.string "type_de_vehicule"
+    t.integer "nombre_de_porte"
+    t.integer "nombre_de_place"
+    t.string "puissance_fiscale"
+    t.string "puissance_din"
+ -->

@@ -1,0 +1,2 @@
+class Immobilier < ApplicationRecord
+end

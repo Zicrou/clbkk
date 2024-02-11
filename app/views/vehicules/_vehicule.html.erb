@@ -1,22 +1,127 @@
 <div id="<%= dom_id vehicule %>">
-  <p>
-    <strong>Marque:</strong>
-    <%= vehicule.marque %>
-  </p>
+  <div class="row d-flex" style="border-bottom: 1px solid grey;">
+    <div class="col-md-6">
+      <div class="d-flex flex-row">
+        <div class="p-1">
+          <p>
+          <strong>Marque:</strong>
+          <%= vehicule.marque %>
+        </p>
 
-  <p>
-    <strong>Modele:</strong>
-    <%= vehicule.modele %>
-  </p>
+        <p>
+          <strong>Modele:</strong>
+          <%= vehicule.modele %>
+        </p>
 
-  <p>
-    <strong>Photo:</strong>
+        <p>
+          <strong>Price:</strong>
+          <%= vehicule.price %>
+        </p>
+
+        
+        </div>
+
+        <div class="mx-5">
+          <h3>Carburant</h3>
+          <p style="border-bottom:1px solid grey;">
+            <% if vehicule.hybride? %>
+              <span>
+                <%= "Hybride" %>
+              </span>
+            <% end %>
+
+            <% if vehicule.diesel? %>
+              <span>
+                <%= "Diesel" %>
+              </span>
+            <% end %>
+
+            <% if vehicule.gazoil? %>
+              <span>
+                <%= "Gazoil" %>
+              </span>
+            <% end %>
+          </p>
+        </div>
+      </div>
+        <p>
+          <strong>Date de premiere mise en circulation:</strong>
+          <%= vehicule.date_de_premiere_mise_en_circulation %>
+        </p>
+    </div>
+        
+    <div class="col-md-6">
+      <div class="d-flex flex-row">
+        <div>
+          <h3>Boite de vitesse:</h3>
+          <p style="border-bottom:1px solid grey;">
+            <% if vehicule.sequentielles? %>
+              <span>
+                <%= "Sequentielles" %>
+              </span>
+            <% end %>
+            
+            <% if vehicule.manuelle? %>
+              <span>
+                <%= "Manuelle" %>
+              </span>
+            <% end %>
+            
+            <% if vehicule.automatique? %>
+              <span>
+                <%= "Automatique" %>
+              </span>
+            <% end %>
+          </p>
+
+          <p>
+            <strong>Puissance_fiscale:</strong>
+            <%= vehicule.puissance_fiscale %>
+          </p>
+
+          <p>
+            <strong>Puissance DIN:</strong>
+            <%= vehicule.puissance_din %>
+          </p>
+        </div>
+
+        <div class="mx-5 px-5">
+          <p>
+            <strong>Kilometrage:</strong>
+            <%= vehicule.kilometrage %>
+          </p>
+          
+
+          <p>
+            <strong>Type de vehicule:</strong>
+            <%= vehicule.type_de_vehicule %>
+          </p>
+
+          <p>
+            <strong>Nombre_de_porte:</strong>
+            <%= vehicule.nombre_de_porte %>
+          </p>
+
+          <p>
+            <strong>Nombre_de_place:</strong>
+            <%= vehicule.nombre_de_place %>
+          </p>
+
+          <p>
+            <strong>Annee_modele:</strong>
+            <%= vehicule.annee_modele %>
+          </p>
+        </div>
+      </div>
+
+      
+
+      
+    </div>
+  </div>
+
+  <p class="mt-5">
     <%= image_tag(vehicule.photo, width:'50%' ) if vehicule.photo.attached? %>
-  </p>
-
-  <p>
-    <strong>Price:</strong>
-    <%= vehicule.price %>
   </p>
 
 </div>
