@@ -1,24 +1,26 @@
 <div id="<%= dom_id vehicule %>">
-  <div class="row d-flex" style="border-bottom: 1px solid grey;">
+  <div class="row d-flex mt-2">
+    <p class="d-flex justify-content-center">
+      <%= image_tag(vehicule.photo, width:'50%' ) if vehicule.photo.attached? %>
+    </p>
     <div class="col-md-6">
       <div class="d-flex flex-row">
         <div class="p-1">
+          
           <p>
-          <strong>Marque:</strong>
-          <%= vehicule.marque %>
-        </p>
+            <strong>Marque:</strong>
+            <%= vehicule.marque %>
+          </p>
 
-        <p>
-          <strong>Modele:</strong>
-          <%= vehicule.modele %>
-        </p>
+          <p>
+            <strong>Modele:</strong>
+            <%= vehicule.modele %>
+          </p>
 
-        <p>
-          <strong>Price:</strong>
-          <%= vehicule.price %>
-        </p>
-
-        
+          <p>
+            <strong>Price:</strong>
+            <%= vehicule.price %>
+          </p>
         </div>
 
         <div class="mx-5">
@@ -119,9 +121,5 @@
       
     </div>
   </div>
-
-  <p class="mt-5">
-    <%= image_tag(vehicule.photo, width:'50%' ) if vehicule.photo.attached? %>
-  </p>
 
 </div>

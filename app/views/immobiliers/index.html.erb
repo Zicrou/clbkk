@@ -1,14 +1,16 @@
-<p style="color: green"><%= notice %></p>
+<div class="container mt-5" style="margin-top:35%;">
+  <p style="color: green"><%= notice %></p>
 
-<h1>Immobiliers</h1>
+  <h1>Immobiliers</h1>
 
-<div id="immobiliers">
-  <% @immobiliers.each do |immobilier| %>
-    <%= render immobilier %>
-    <p>
-      <%= link_to "Show this immobilier", immobilier %>
-    </p>
-  <% end %>
+  <div id="immobiliers">
+    <% @immobiliers.each do |immobilier| %>
+      <%= render immobilier %>
+      <p>
+        <%= link_to "Show this immobilier", immobilier %>
+      </p>
+    <% end %>
+  </div>
+
+  <%= link_to "New immobilier", new_immobilier_path %>
 </div>
-
-<%= link_to "New immobilier", new_immobilier_path %>

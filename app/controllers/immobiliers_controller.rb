@@ -65,6 +65,6 @@ class ImmobiliersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def immobilier_params
-      params.require(:immobilier).permit(:titre, :chambre, :salle_de_bains, :description, :prix, :adresse, :region, :etage, :rez_de_chausse, :terasse, :contact, :statut, :etat)
+      params.require(:immobilier).permit(:titre, :photo, :images, :chambre, :salle_de_bain, :description, :prix, :adresse, :region, :etage, :rez_de_chausse, :terasse, :contact, :statut, :etat)
     end
 end

@@ -1,4 +1,10 @@
 <div id="<%= dom_id immobilier %>">
+
+  <p>Images:
+    <% immobilier.images.each do |image| %>
+      <%= image_tag(image, width:'50%') %>
+    <% end%>
+  </p>
   <p>
     <strong>Titre:</strong>
     <%= immobilier.titre %>
@@ -11,13 +17,9 @@
 
   <p>
     <strong>Salle de bains:</strong>
-    <%= immobilier.salle_de_bains %>
+    <%= immobilier.salle_de_bain %>
   </p>
 
-  <p>
-    <strong>Integer:</strong>
-    <%= immobilier.integer %>
-  </p>
 
   <p>
     <strong>Description:</strong>
